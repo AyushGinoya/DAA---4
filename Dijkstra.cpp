@@ -28,8 +28,8 @@ void dijkstra(int source)
         vis[curr_node] = true;
         for(auto child : g[curr_node])
         {
-            int child_node = child.second;
-            int child_node_dis = child.first;
+            int child_node = child.first;
+            int child_node_dis = child.second;
 
             if(dist[curr_node] + child_node_dis < dist[child_node])
             {
@@ -54,7 +54,7 @@ int main()
         g[y].push_back({x,wt});
     }
 
-
+    /*
     for(auto m : g)
     {
         for(auto n :m)
@@ -64,13 +64,15 @@ int main()
         cout<<endl;
     }
 
+    */
+
     cout<<"Enter Source node :";
     int s;
     cin>>s;
     dijkstra(s);
 
     int ans=0;
-    for(int i=0;i<n;i++)
+    for(int i=0;i<m;i++)
     {
 
        cout<<dist[i]<<"     ";
